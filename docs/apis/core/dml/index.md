@@ -863,9 +863,9 @@ public function sql_compare_text(
 
 ```php title="Example"
 $comparedescription = $DB->sql_compare_text('description');
-$comparedescription = $DB->sql_compare_text(':description');
+$compareplaceholder = $DB->sql_compare_text(':description');
 $todogroups = $DB->get_records_sql(
-    "SELECT id FROM {group} WHERE {$comparedescription} = {$comparedescriptionplaceholder}",
+    "SELECT id FROM {group} WHERE {$comparedescription} = {$compareplaceholder}",
     [
         'description' => 'TODO',
     ]
